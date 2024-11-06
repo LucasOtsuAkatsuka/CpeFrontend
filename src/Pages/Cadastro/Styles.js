@@ -18,49 +18,21 @@ export const Container = styled.div`
   background-color: #000;
 `;
 
-export const Header = styled.header`
-  background-color: #ffe712;
-  width: 100%;
-  padding: 2% 6%;
-    
-`;
-
-export const Logo = styled.img`
-  font-size: 5px;
-  width: 200px;
-  font-weight: bold;
-  color: #000;
-
-  @media (max-width: 1300px ) and (min-width: 1001px) {
-    width: 180px;
-  }
-
-  @media (max-width: 1000px ) and (min-width: 601px) {
-    width: 150px;
-  }
-
-  @media (max-width: 600px ) and (min-width: 300px) {
-    width: 120px;
-    padding-top: 10px;
-  }
-`;
-
-export const Form = styled.form`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 35%;
-  background-color: #000;
+
+  h2{
+    color: #ffdb00;
+    margin-bottom: 20px;
+    font-size: 60px;
+  }
 
   @media (max-width: 1000px) {
     width: 70%;
   }
-`;
-
-export const Title = styled.h2`
-  color: #ffdb00;
-  margin-bottom: 20px;
-  font-size: 60px;
 `;
 
 export const Icon = styled(EyeOutlined)`
@@ -70,6 +42,7 @@ export const Icon = styled(EyeOutlined)`
   transform: translateY(-50%);
   color: #000;
   font-size: 25px;
+  background-color: #f5f5f5;
 
   @media (max-width: 1300px ) and (min-width: 1001px) {
     left: 90%;
@@ -88,36 +61,9 @@ export const Icon = styled(EyeOutlined)`
 export const InputContainer = styled.div`
   position: relative;
   width: 100%;
-  margin: 10px 0;
 `;
 
-export const Input = styled.input`
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 25px;
-  border: none;
-  background-color: #f5f5f5;
-  color: #000;
-  font-size: 16px;
-`;
 
-export const Button = styled.button`
-  width: 70%;
-  padding: 15px;
-  border-radius: 20px;
-  border: none;
-  background-color: #ffe712;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-
-  &:hover {
-    background-color: #e6c200;
-  }
-`;
 
 export const LoginLink = styled.p`
   color: #fff;

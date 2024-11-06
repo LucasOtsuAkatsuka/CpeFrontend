@@ -1,6 +1,4 @@
-import Home from "./Pages/Home";
-import Login from "./Pages/Login/Login";
-import Cadastro from "./Pages/Cadastro";
+
 import Routes from "./Routes";
 
 function App(){
