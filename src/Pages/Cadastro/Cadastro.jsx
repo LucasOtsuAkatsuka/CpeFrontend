@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {Container, LoginLink, Pagina, InputContainer, Icon, StyledForm} from './Styles'
 import EyeOutlined from "@ant-design/icons";
 import ImputForm from '../../Components/Input/ImputForm';
@@ -14,7 +15,7 @@ export default function Cadastro() {
         <Container>
         
           <StyledForm>
-              <h2>CADASTRAR</h2>
+              <h2>CADASTRO</h2>
               <ImputForm type="text" placeholder="Nome" />
               <ImputForm type="email" placeholder="E-mail" />
               <ImputForm type="text" placeholder="Cargo" />
@@ -24,7 +25,7 @@ export default function Cadastro() {
               </InputContainer>
               <ImputForm type="password" placeholder="Repita sua senha"/>
               <LoginLink>
-                Já tem uma conta? Faça o login <a href="#">aqui</a>.
+                Já tem uma conta? Faça o login <Link to="/login" >aqui</Link>.
               </LoginLink>
               <ButtonForm text="CRIAR CONTA"></ButtonForm>
           </StyledForm>
