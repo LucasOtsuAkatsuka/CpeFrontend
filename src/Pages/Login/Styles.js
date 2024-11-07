@@ -35,6 +35,11 @@ export const StyledForm = styled.form`
   }
 `;
 
+export const InputContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
 export const Icon = styled(EyeOutlined)`
   position: absolute;
   top: 50%;
@@ -58,10 +63,7 @@ export const Icon = styled(EyeOutlined)`
 
 `;
 
-export const InputContainer = styled.div`
-  position: relative;
-  width: 100%;
-`;
+
 
 
 

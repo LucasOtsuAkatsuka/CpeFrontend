@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {Container, LoginLink, Pagina, InputContainer, Icon, StyledForm} from './Styles'
 import EyeOutlined from "@ant-design/icons";
@@ -9,21 +9,31 @@ import Header from '../../Components/Header';
 
 export default function Login() {
 
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  //console.log({email, senha})
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log({email, senha});
+  }
+
   return (
     <Pagina>
         <Header/>
         <Container>
-          <StyledForm>
+          <StyledForm onSubmit={handleSubmit}>
               <h2>LOGIN</h2>
-              <ImputForm type="email" placeholder="E-mail" />
+              <ImputForm type="email" placeholder="E-mail" required onChange={(e)=>setEmail(e.target.value)}/>
               <InputContainer>
                 <Icon icon={EyeOutlined} />
-                <ImputForm type="password" placeholder="Senha"/>
+                <ImputForm type="password" placeholder="Senha" required onChange={(e)=>setSenha(e.target.value)}/>
               </InputContainer>
               <LoginLink>
                 Não tem login? Faça seu cadastro <Link to="/cadastro">aqui</Link>.
               </LoginLink>
-              <ButtonForm text="CRIAR CONTA"></ButtonForm>
+              <ButtonForm type="submit" text="CRIAR CONTA"></ButtonForm>
           </StyledForm>
         </Container>
       </Pagina>

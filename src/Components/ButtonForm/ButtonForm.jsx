@@ -4,7 +4,7 @@ import { ButtonFormStyle } from './Styles'
 function ButtonForm(props) {
   return (
     <>
-        <ButtonFormStyle>{props.text}</ButtonFormStyle>
+        <ButtonFormStyle type={props.type}>{props.text}</ButtonFormStyle>
     </>
   )
 }
