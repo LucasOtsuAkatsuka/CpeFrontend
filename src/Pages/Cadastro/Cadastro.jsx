@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {Container, LoginLink, Pagina, InputContainer, Icon, StyledForm} from './Styles'
-import EyeOutlined from "@ant-design/icons";
+import {Container, LoginLink, Pagina, StyledForm} from './Styles'
 import ImputForm from '../../Components/Input/ImputForm';
 import ButtonForm from '../../Components/ButtonForm';
 import Header from '../../Components/Header';
-
+import InputPassword from '../../Components/InputPassword';
 
 
 export default function Cadastro() {
@@ -19,10 +18,7 @@ export default function Cadastro() {
               <ImputForm type="text" placeholder="Nome" />
               <ImputForm type="email" placeholder="E-mail" />
               <ImputForm type="text" placeholder="Cargo" />
-              <InputContainer>
-                <Icon icon={EyeOutlined} />
-                <ImputForm type="password" placeholder="Senha"/>
-              </InputContainer>
+              <InputPassword type="password" placeholder="Senha"/>
               <ImputForm type="password" placeholder="Repita sua senha"/>
               <LoginLink>
                 Já tem uma conta? Faça o login <Link to="/login" >aqui</Link>.
