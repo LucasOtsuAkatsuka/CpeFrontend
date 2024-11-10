@@ -5,19 +5,35 @@ import EyeOutlined from "@ant-design/icons";
 import ImputForm from '../../Components/Input/ImputForm';
 import ButtonForm from '../../Components/ButtonForm';
 import Header from '../../Components/Header';
+import api from '../../Services/api';
 
 
 export default function Login() {
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [carregando, setCarregando] = useState(false);
 
   //console.log({email, senha})
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({email, senha});
+
+    try {
+      setCarregando(true);
+      const res = await api.post("/login", {email, senha});
+      console.log(res.data);
+    } catch (erro) {
+      console.error(erro);
+      alert(erro.message);
+    } finally {
+      setCarregando(false);
+    }
   }
+
+  if (carregando) return (<Container>
+    <h1>Carregando...</h1>
+  </Container>)
 
   return (
     <Pagina>
