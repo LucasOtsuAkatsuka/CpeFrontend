@@ -1,13 +1,16 @@
 import React from 'react'
-import InputPassword from '../../Components/InputPassword'
+import Carrossel from '../../Components/Carrossel'
+import { Container, Pagina } from './Styles'
+import Header from '../../Components/Header';
 
 export default function Home() {
 
-
-
   return (
-    <div>
-     
-    </div>
+    <Pagina>
+      <Header/>
+      <Container>
+        <Carrossel/>
+      </Container>
+    </Pagina>
   )
 }
