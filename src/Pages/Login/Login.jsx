@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import {Container, LoginLink, Pagina, InputContainer, Icon, StyledForm} from './Styles'
-import EyeOutlined from "@ant-design/icons";
+import {Container, LoginLink, Pagina, StyledForm} from './Styles'
 import ImputForm from '../../Components/Input/ImputForm';
 import ButtonForm from '../../Components/ButtonForm';
 import Header from '../../Components/Header';
 import api from '../../Services/api';
 import InputPassword from '../../Components/InputPassword';
+import useAuthStore from '../../stores/auth';
 
 
 export default function Login() {
@@ -14,16 +14,21 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [carregando, setCarregando] = useState(false);
+  const token = useAuthStore((state) => state.token)
+  const usuario = useAuthStore((state) => state.usuario)
+  const setToken = useAuthStore((state) => state.setToken);
+  console.log({token, usuario});
 
   //console.log({email, senha})
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({email, senha})
     try {
       setCarregando(true);
       const res = await api.post("/login", {email, senha});
-      console.log(res.data);
+      const {token} = res.data;
+      setToken(token);
+      //console.log(res.data);
     } catch (erro) {
       console.error(erro);
       alert(erro.message);

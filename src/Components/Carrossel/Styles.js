@@ -3,22 +3,38 @@ import styled from "styled-components";
 
 export const CarouselWrapper = styled.div`
     width: 80%;
-    height: 500px; 
-    width: 800px;
+    width: 1000px;
     margin-top: 50px; 
 
     .carousel {
         height: 350px;
+
     }
 
+    .img-caroussel{
+      height: 600px;
+      object-fit: contain;
+    }
+    
 
     @media (max-width: 768px) {
         width: 90%;
     }
 
     @media (max-width: 480px) {
-        width: 100%; 
+        width: 80%;
+        .carousel {
+          height: 100px;
+          width: 300px;
+        }
+
+        .img-caroussel{
+          height: 200px;
+          object-fit: contain;
+        }
     }
+
+  
 `;
 
 export const StyledArrowButton = styled.button`

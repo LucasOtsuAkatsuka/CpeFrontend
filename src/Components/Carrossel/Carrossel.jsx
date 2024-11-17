@@ -25,7 +25,7 @@ export default function Carrossel() {
         "id":"112",
         "author":"Zugr",
         "width":4200,
-        "height":2800,
+        "height":3240,
         "url":"https://unsplash.com/photos/kmF_Aq8gkp0",
         "download_url":"https://picsum.photos/id/112/4200/2800"
     },
@@ -73,7 +73,7 @@ export default function Carrossel() {
                      )
                  }>
                 {
-                    images.map(image => <img key={image.id} src={image.download_url} alt={image.author} style={{ height: '100%', width: '100%', objectFit: 'contain' }}/>)
+                    images.map(image => <img key={image.id} className='img-caroussel' src={image.download_url} alt={image.author}/>)
                 }
             </Carousel>
         </CarouselWrapper>
