@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Carrossel from '../../Components/Carrossel'
-import { Container, Pagina } from './Styles'
+import { ButtonModalLogin, Container, Pagina } from './Styles'
 import Header from '../../Components/Header';
 import api from '../../Services/api';
 import Tabela from '../../Components/Tabela';
+import ModalCpe from '../../Components/Modal/ModalCpe';
 
 export default function Home() {
 
   const [usuarios, setUsuarios] = useState([])
   const [carregando, setCarregando] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   
   const getUsuarios = async () => {
     try {
@@ -36,9 +38,10 @@ export default function Home() {
       <Header/>
       <Container>
         <Carrossel/>
+        <ButtonModalLogin onClick={() => setOpenModal(true)}>Fazer Login</ButtonModalLogin>
         <Tabela/>
-        {usuarios.map((usuario)=> <h1 className='nomesMap'>{usuario.nome}</h1>)}
+        <ModalCpe isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
       </Container>
     </Pagina>
   )
-}
+}//{usuarios.map((usuario)=> <h1 key={key} className='nomesMap'>{usuario.nome}</h1>)}
