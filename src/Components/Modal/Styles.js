@@ -91,11 +91,11 @@ export const LoginButton = styled.button`
 `;
 
 export const StyledLink = styled(Link)`
-  text-decoration: none; /* Remove o sublinhado */
-  color: inherit; /* Usa a cor do pai ou definida manualmente */
+  text-decoration: none; 
+  color: inherit; 
   font-weight: bold;
 
   &:hover {
-    color: #fff; /* Altera a cor no hover, se necessário */
+    color: #fff; 
   }
 `
