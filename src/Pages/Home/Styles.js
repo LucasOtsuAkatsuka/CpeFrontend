@@ -5,14 +5,23 @@ export const Pagina = styled.div`
     align-items:center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+
 `
 
 export const Container = styled.div`
   display: flex;
-  //align-items: center;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  //justify-content: center;
   height: 100%;
   width: 100%;
   background-color: #000;
+
+  .nomesMap{
+    color: #fff;
+    margin-top: 40px;
+  }
 `;
+
+
+
