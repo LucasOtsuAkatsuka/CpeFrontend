@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import { InputContainer, StyledInputPassword, Icon } from './Styles'
+import React, { useState } from "react";
+import { InputContainer, StyledInputPassword, Icon } from "./Styles";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-export default function InputPassword(props) {
-
+const InputPassword = React.forwardRef(({ placeholder, required, onChange, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => {
@@ -12,8 +11,19 @@ export default function InputPassword(props) {
 
     return (
         <InputContainer>
-            <StyledInputPassword type={showPassword ? "text" : "password"} placeholder={props.placeholder}  required={props.required} onChange={props.onChange}/>
-            <Icon onClick={toggleShowPassword}>{showPassword ? <FaEyeSlash /> : <FaEye />}</Icon>
+            <StyledInputPassword
+                type={showPassword ? "text" : "password"}
+                placeholder={placeholder}
+                required={required}
+                onChange={onChange}
+                {...props}
+                ref={ref}
+            />
+            <Icon onClick={toggleShowPassword}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </Icon>
         </InputContainer>
-    )
-}
+    );
+});
+
+export default InputPassword;

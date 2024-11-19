@@ -1,10 +1,12 @@
 import React from 'react';
 import { InputForm } from './Styles';
 
-export default function ImputForm(props) {
+const ImputForm = React.forwardRef(({ type, placeholder, required, onChange, ...props }, ref) => {
   return (
     <>
-        <InputForm type={props.type} placeholder={props.placeholder} required={props.required} onChange={props.onChange}/>
+        <InputForm type={type} placeholder={placeholder} required={required} onChange={onChange} {...props} ref={ref}/>
     </>
   )
-}
+});
+
+export default ImputForm;
