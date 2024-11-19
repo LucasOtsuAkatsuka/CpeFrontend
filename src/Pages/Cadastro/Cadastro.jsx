@@ -35,6 +35,7 @@ export default function Cadastro() {
               <ImputForm  {...register("nome")} type="text" placeholder="Nome" />
               <ImputForm  {...register("email")} type="email" placeholder="E-mail" />
               <ImputForm  {...register("cargo")} type="text" placeholder="Cargo" />
+              <ImputForm  {...register("status")} type="text" placeholder="Status" />
               <InputPassword  {...register("senha")} type="password" placeholder="Senha"/>
               <ImputForm type="password" placeholder="Repita sua senha"/>
               <LoginLink>
