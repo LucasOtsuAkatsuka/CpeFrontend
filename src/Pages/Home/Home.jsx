@@ -35,7 +35,6 @@ export default function Home() {
 
   return (
     <Pagina>
-      <Header/>
       <Container>
         <Carrossel/>
         <ButtonModalLogin onClick={() => setOpenModal(true)}>Fazer Login</ButtonModalLogin>

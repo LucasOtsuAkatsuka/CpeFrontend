@@ -5,7 +5,6 @@ export const Pagina = styled.div`
     align-items:center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
 `
 
 export const Container = styled.div`

@@ -28,7 +28,6 @@ export default function Cadastro() {
 
   return (
       <Pagina>
-        <Header/>
         <Container>
           <StyledForm onSubmit={handleSubmit(response)}>
               <h2>CADASTRO</h2>
