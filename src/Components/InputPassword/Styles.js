@@ -23,6 +23,4 @@ export const Icon = styled.div`
     cursor: pointer;
     color: #555;
     top: 23px;
-    
-
 `;

@@ -7,9 +7,9 @@ import useAuthStore from "./stores/auth"
 import { AppLayout } from "./Layouts/"
 
 
-function rotasPrivadas (){
+function RotasPrivadas (){
     const token = useAuthStore((state) => state.token);
-    if (token) return <Outlet/>;
+    if (token) return <Outlet />;
 
     return <Navigate to="/login" replace />
 }
@@ -18,10 +18,10 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
             <Route path="/" element={<AppLayout/>}>
-                <Route element={<rotasPrivadas/>}>
+                <Route element={<RotasPrivadas/>}>
                     <Route path="perfil" element={<Perfil></Perfil>}></Route>
+                    <Route index element={<Home></Home>}></Route>
                 </Route>
-                <Route index element={<Home></Home>}></Route>
                 <Route path="login" element={<Login></Login>}></Route>
                 <Route path="cadastro" element={<Cadastro></Cadastro>}></Route>
             </Route>

@@ -39,6 +39,7 @@ export const StyledDivs1 = styled.div`
   display:flex;
   justify-content: space-between;
   width: 30%;
+  font-weight: bold;
   @media (max-width: 1400px) {
     width: 40%;
   }
@@ -49,6 +50,8 @@ export const StyledDivs1 = styled.div`
 
 export const StyledDivs2 = styled.div`
   display:flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   @media (max-width: 1000px) {
     display: none; 
@@ -73,15 +76,15 @@ export const StyledButton = styled.button`
   cursor: pointer;
   color: #555;
   text-decoration: none;
-  border: solid 2px;
-  border-radius: 5px;
+  border: none;
   padding: 5px;
-  font-size: 20px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.2s;
   background-color: #ffe712;
+  font-weight: bold;
 
   &:hover {
     background-color: yellow; 
@@ -107,6 +110,7 @@ export const StyledMenuButton = styled.button`
 
 export const StyledMenuNav = styled.div`
   position: absolute;
+  backdrop-filter: blur(10px);
   width: 100%;
   height: 100vh;
   z-index: 1000;
@@ -119,7 +123,7 @@ export const StyledMenuNav = styled.div`
   justify-content: center;
   opacity: 0;
   background: rgb(0,12,14);
-  background: linear-gradient(90deg, rgba(0,12,14,1) 0%, rgba(255,248,4,1) 0%, rgba(108,121,9,1) 95%);
+  background: linear-gradient(90deg, rgba(0,12,14,1) 0%, rgba(255,248,4,1) 0%, rgba(108,121,9,0.6138830532212884) 95%);
 
 
   >svg {

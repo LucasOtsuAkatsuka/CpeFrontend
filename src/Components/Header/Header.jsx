@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { StyledHeader, StyledDivs1, StyledDivs2, StyledLink, StyledButton, StyledMenuNav, StyledMenuButton} from './Styles'
 import useAuthStore from '../../stores/auth';
 import { IoIosLogOut } from "react-icons/io";
@@ -9,13 +9,9 @@ import { IoMenu } from "react-icons/io5";
 export default function Header() {
   const usuario = useAuthStore((state) => state.usuario);
   const clearAuth = useAuthStore((state) => state.clearAuth);
-  const navigate =  useNavigate();
   const [menuVisivel, setMenuVisivel] = useState(false);
 
-  const logout = () => {
-    clearAuth();
-    navigate("/login");
-  }
+  
 
   const toggleMenu = () => {
     setMenuVisivel(!menuVisivel);
@@ -43,7 +39,7 @@ export default function Header() {
                 <StyledLink to="/" onClick={toggleMenu}>HOME</StyledLink>
                 <StyledLink to="/perfil" onClick={toggleMenu}>PERFIL</StyledLink>
                 <StyledLink to="" onClick={toggleMenu}>USUARIOS</StyledLink>
-                <StyledButton type='button' onClick={logout}><IoIosLogOut/></StyledButton>
+                <StyledButton type='button' onClick={clearAuth}><IoIosLogOut/></StyledButton>
               </nav>
             </StyledMenuNav>
           )}
@@ -55,7 +51,7 @@ export default function Header() {
           </StyledDivs1>
           <StyledDivs2>
             <h2>Bem-vindo, {usuario.nome}</h2>
-            <StyledButton type='button' onClick={logout}><IoIosLogOut/></StyledButton>
+            <StyledButton type='button' onClick={clearAuth}><IoIosLogOut/></StyledButton>
           </StyledDivs2>
         </>)}
       </StyledHeader>

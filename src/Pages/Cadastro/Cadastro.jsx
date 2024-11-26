@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {Container, LoginLink, Pagina, StyledForm} from './Styles'
 import ImputForm from '../../Components/Input/ImputForm';
 import ButtonForm from '../../Components/ButtonForm';
-import Header from '../../Components/Header';
 import InputPassword from '../../Components/InputPassword';
 import { useForm } from "react-hook-form";
 import { useCreateUser } from '../../hooks/user';
@@ -42,8 +41,6 @@ export default function Cadastro() {
               </LoginLink>
               <ButtonForm text="CRIAR CONTA"></ButtonForm>
           </StyledForm>
-            
-            
           
         </Container>
       </Pagina>
