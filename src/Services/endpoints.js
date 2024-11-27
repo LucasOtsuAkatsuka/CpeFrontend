@@ -14,12 +14,12 @@ export async function CreateUsers(body){
 }
 
 export async function UpdateUsers(id, body){
-    const {data} = await api.put(`/usuarios:${id}`, body)
+    const {data} = await api.put(`/usuarios/:${id}`, body)
     return data;
 }
 
 export async function DeleteUsers(id){
-    const {data} = await api.delete(`/usuarios:${id}`)
+    const {data} = await api.delete(`/usuarios/:${id}`)
     return data;
 }
 
@@ -32,7 +32,7 @@ export async function CreateSessao(body){
 }
 
 export async function DeleteSessao(id){
-    const {data} = await api.delete(`/sessoes:${id}`)
+    const {data} = await api.delete(`/sessoes/${id}`)
     return data;
 }
 
