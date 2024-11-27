@@ -3,6 +3,7 @@ import Home from "./Pages/Home"
 import Login from "./Pages/Login/Login"
 import Cadastro from "./Pages/Cadastro"
 import Perfil from "./Pages/Perfil"
+import Usuarios from "./Pages/Usuarios"
 import useAuthStore from "./stores/auth"
 import { AppLayout } from "./Layouts/"
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
                 <Route element={<RotasPrivadas/>}>
                     <Route path="perfil" element={<Perfil></Perfil>}></Route>
                     <Route index element={<Home></Home>}></Route>
+                    <Route path="usuarios" element={<Usuarios></Usuarios>}></Route>
                 </Route>
                 <Route path="login" element={<Login></Login>}></Route>
                 <Route path="cadastro" element={<Cadastro></Cadastro>}></Route>

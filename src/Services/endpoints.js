@@ -20,7 +20,9 @@ export async function UpdateUsers({id, body}){
 }
 
 export async function DeleteUsers(id){
+    console.log(id);
     const {data} = await api.delete(`/usuarios/${id}`)
+    console.log(data);
     return data;
 }
 

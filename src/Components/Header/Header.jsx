@@ -38,7 +38,7 @@ export default function Header() {
                 <h2>Bem-vindo, {usuario.nome}</h2>
                 <StyledLink to="/" onClick={toggleMenu}>HOME</StyledLink>
                 <StyledLink to="/perfil" onClick={toggleMenu}>PERFIL</StyledLink>
-                <StyledLink to="" onClick={toggleMenu}>USUARIOS</StyledLink>
+                <StyledLink to="/usuarios" onClick={toggleMenu}>USUARIOS</StyledLink>
                 <StyledButton type='button' onClick={clearAuth}><IoIosLogOut/></StyledButton>
               </nav>
             </StyledMenuNav>
@@ -47,7 +47,7 @@ export default function Header() {
           <StyledDivs1>
             <StyledLink to="/">HOME</StyledLink>
             <StyledLink to="/perfil">PERFIL</StyledLink>
-            <StyledLink to="">USUARIOS</StyledLink>
+            <StyledLink to="/usuarios">USUARIOS</StyledLink>
           </StyledDivs1>
           <StyledDivs2>
             <h2>Bem-vindo, {usuario.nome}</h2>
