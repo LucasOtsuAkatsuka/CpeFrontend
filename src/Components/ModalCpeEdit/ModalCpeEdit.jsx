@@ -3,21 +3,37 @@ import { ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseB
 import ImputForm from '../Input/ImputForm';
 import { useForm } from 'react-hook-form';
 import InputPassword from '../InputPassword';
+import { useUpdateUser } from '../../hooks/user';
+import useAuthStore from '../../stores/auth';
 
 
 export default function ModalCpeEdit({isOpen, setModalOpen}) {
+    
     const {
         handleSubmit,
         register,
         formState: {errors},
-      } = useForm({});
+    } = useForm({});
+
+    const{ mutate:putUser, isPending } = useUpdateUser({});
+
+    const usuario = useAuthStore((state) => state.usuario._id);
+
+    function response(data) {
+        const filteredData = Object.fromEntries(
+            Object.entries(data).filter(([key, value]) => value.trim() !== "")
+        );
+        console.log(usuario, filteredData);
+        putUser({id: usuario, body: filteredData});
+        setModalOpen();
+    }
 
 
     if(isOpen)
     return (
         <>
             <ModalOverlay>
-            <ModalContent>
+            <ModalContent onSubmit={handleSubmit(response)}>
                 <ModalHeader>
                 <h2>Editar Usuário</h2>
                 </ModalHeader>
@@ -31,7 +47,7 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
                     <ImputForm type="password" placeholder="Confirme sua senha"/>
                 </ModalBody>
                 <ModalFooter>
-                    <LoginButton>SALVAR</LoginButton>
+                    <LoginButton type="submit">SALVAR</LoginButton>
                 </ModalFooter>
             </ModalContent>
             </ModalOverlay>
