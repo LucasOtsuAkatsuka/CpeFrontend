@@ -88,24 +88,20 @@ export const ButtonModalLogin = styled.button`
 
   
   @media (max-width: 768px) {
-    top: 65%;
-    right: 8%;
-    padding: 6px 7px;
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 
   
   @media (max-width: 480px) {
-    top: 66%;
-    right: 5%;
-    font-size: 12px;
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 
  
   @media (max-width: 320px) {
-    top: 68%;
-    right: 4%;
-    font-size: 10px;
-    padding: 4px 6px;
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 `
 

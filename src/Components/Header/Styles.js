@@ -84,7 +84,7 @@ export const StyledButton = styled.button`
   align-items: center;
   transition: transform 0.2s;
   background-color: #ffe712;
-  font-weight: bold;
+
 
   &:hover {
     background-color: yellow; 
@@ -106,6 +106,20 @@ export const StyledMenuButton = styled.button`
   @media (min-width: 1001px) {
     display: none;  
   }
+`
+
+export const StyledButtonMobile = styled.button`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0)
 `
 
 export const StyledMenuNav = styled.div`

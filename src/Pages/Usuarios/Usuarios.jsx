@@ -39,7 +39,6 @@ export default function Usuarios() {
       <Container>
         <StyledTitulo>GERENCIAR USUÁRIOS</StyledTitulo>
         <TabelaUsuarios/>
-        <ModalCpe isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
       </Container>
     </Pagina>
   )

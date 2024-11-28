@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -13,18 +14,16 @@ export const ModalOverlay = styled.div`
   z-index: 1000;
 `;
 
-export const ModalContent = styled.form`
-  position: relative; 
+export const ModalContent = styled.div`
+    position: relative; 
   background: #fff;
-  max-width: 500px;
   width: 80%;
+  max-width: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;   
 `;
 
 
@@ -32,8 +31,8 @@ export const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
   padding: 15px;
-  margin-top: 20px;
 
   h2 {
     margin: 0;
@@ -56,7 +55,7 @@ export const ModalBody = styled.div`
 export const ModalFooter = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 0 25px 0;
+  padding: 15px;
 
 `;
 
@@ -79,11 +78,11 @@ export const CloseButton = styled.button`
 
 export const LoginButton = styled.button`
   background: #fff;
-  border: 2px solid #F19709;
+  border: 1px solid #F19709;
   border-radius: 5px;
   color: #F19709;
   font-size: 13px;
-  padding: 10px 70px;
+  padding: 2px 20px;
   cursor: pointer;
 
   &:hover {
@@ -91,3 +90,20 @@ export const LoginButton = styled.button`
     color: #fff;
   }
 `;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none; 
+  color: inherit; 
+  font-weight: bold;
+
+  &:hover {
+    color: #fff; 
+  }
+`
+
+export const StyledInput = styled.input`
+    padding: 2%;
+    border-radius: 10px;
+    border: solid 2px;
+    border-color: black;
+`

@@ -181,5 +181,29 @@ export const StyledSelect = styled(Select)`
         display: none;
     }
 `
-    
+
+export const StyledDivEdit = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7%;
+`
+
+export const StyledIconEdit = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  cursor: pointer;
+
+  &:hover{
+    color: black !important;
+  }
+`
 

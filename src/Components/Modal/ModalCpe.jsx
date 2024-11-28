@@ -11,7 +11,7 @@ export default function ModalCpe({isOpen, setModalOpen}) {
 
   const{ mutate:postSessao, isPending } = useCreateSessao({});
 
-
+  
   function response() {
     const data = {"id_usuario": usuarioId};
     console.log("Dados enviados ao backend:", data);
@@ -20,7 +20,7 @@ export default function ModalCpe({isOpen, setModalOpen}) {
     setModalOpen(false);
     window.location.reload();
   }
-  
+
 
   if(isOpen)
     return(
