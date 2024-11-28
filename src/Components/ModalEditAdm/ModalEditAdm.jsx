@@ -5,14 +5,21 @@ import { useUpdateUser } from '../../hooks/user';
 
 export default function ModalEditAdm({isOpen, setModalOpen, idUsuario}) {
 
-    const{ mutate:putUser, isPending } = useUpdateUser({});
+    const{ mutate:putUser, isPending } = useUpdateUser({onSuccess: (updatedUser) => {
+      useAuthStore.setState((state) => ({
+          usuario: { ...state.usuario, ...updatedUser }
+      }));
+          setModalOpen(); 
+      },
+      onError: (error) => {
+          console.error("Erro ao atualizar o usuário:", error);
+    }});
     const [cargo, setCargo] = useState('');
 
     function response() {
         const data = {cargo};
         console.log(idUsuario, data);
         putUser({id: idUsuario, body: data});
-        setModalOpen();
         window.location.reload();
     }
   

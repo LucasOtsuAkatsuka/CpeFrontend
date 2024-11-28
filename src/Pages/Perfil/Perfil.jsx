@@ -7,10 +7,9 @@ import ModalCpeEdit from '../../Components/ModalCpeEdit';
 
 export default function Perfil() {
 
+  const [openModal, setOpenModal] = useState(false);
   const usuarioAtual = useAuthStore((state) => state.usuario);
   const [user, setUser] = useState(usuarioAtual);
-  const [openModal, setOpenModal] = useState(false);
-  
 
   useEffect(() => {
     setUser(usuarioAtual);
@@ -21,7 +20,7 @@ export default function Perfil() {
         <Container>
           <h1>PERFIL</h1>
           <StyledDiv>
-            <Usuario user={user}></Usuario>
+            <Usuario ></Usuario>
           </StyledDiv>
           <StyledButton onClick={() => setOpenModal(true)}>EDITAR</StyledButton>
           <ModalCpeEdit isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>

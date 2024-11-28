@@ -29,7 +29,6 @@ export const StyledTabela = styled(Table)`
     border: none;
     border-bottom: 1px solid #fff;
     word-wrap: break-word;
-
   }
 
   .ant-table-tbody td:first-child {
@@ -43,8 +42,7 @@ export const StyledTabela = styled(Table)`
 
   .ant-table-tbody td:nth-child(2) div,
   .ant-table-tbody td:nth-child(3) div {
-    
-    width: 90px;
+    width: 100%;
   }
 
   .ant-table-tbody td:last-child {
@@ -82,7 +80,7 @@ export const StyledTabela = styled(Table)`
 
   @media (max-width: 480px) {
     .ant-table {
-      width: 350px;
+      width: 100%;
     }
     .ant-table-thead > tr > th {
       font-size: 12px;
@@ -91,6 +89,7 @@ export const StyledTabela = styled(Table)`
       font-size: 11px;
     }
   }
+    
 
   @media (max-width: 280px) {
     .ant-table {
@@ -155,7 +154,7 @@ export const StyledBuscaContainer = styled.div`
 
 export const StyledSelect = styled(Select)`
     .ant-select {
-        text-align: center;
+        text-align: center !important;
         margin: 0 !important;
         padding: 0 !important;
         display: inline-block;
@@ -169,6 +168,7 @@ export const StyledSelect = styled(Select)`
         background-color: transparent; 
         display: flex;
         justify-content: center;
+        text-align: center !important;
     }
     
     .ant-select-selection-item {
@@ -183,7 +183,7 @@ export const StyledSelect = styled(Select)`
 `
 
 export const StyledDivEdit = styled.div`
-  width: 100%;
+  width: 150%;
   display: flex;
   justify-content: center;
   align-items: center;

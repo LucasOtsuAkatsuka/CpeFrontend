@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyledDados, StyledDado, StyledValor} from "./styles"
+import useAuthStore from '../../stores/auth';
 
 
-export default function Usuario({user}) {
-    if (!user) {
+
+export default function Usuario() {
+   
+
+    const usuarioAtual = useAuthStore((state) => state.usuario);
+    const [user, setUser] = useState(usuarioAtual);
+
+    useEffect(() => {
+        setUser(usuarioAtual)
+      }, [usuarioAtual]);
+
+    if (!usuarioAtual) {
         return <div>Carregando...</div>; 
-      }
+    } 
 
     return (
             <StyledDados>

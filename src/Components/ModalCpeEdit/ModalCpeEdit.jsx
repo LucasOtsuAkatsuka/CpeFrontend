@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, LoginButton} from "./styles";
 import ImputForm from '../Input/ImputForm';
 import { useForm } from 'react-hook-form';
@@ -12,10 +12,19 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
     const {
         handleSubmit,
         register,
+        reset,
         formState: {errors},
     } = useForm({});
 
-    const{ mutate:putUser, isPending } = useUpdateUser({});
+    const{ mutate:putUser, isPending } = useUpdateUser({ onSuccess: (updatedUser) => {
+        useAuthStore.setState((state) => ({
+            usuario: { ...state.usuario, ...updatedUser }
+        }));
+        reset();
+    },
+    onError: (error) => {
+        console.error("Erro ao atualizar o usuário:", error);
+    }});
 
     const usuario = useAuthStore((state) => state.usuario._id);
 
@@ -23,7 +32,6 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
         const filteredData = Object.fromEntries(
             Object.entries(data).filter(([key, value]) => value.trim() !== "")
         );
-        console.log(usuario, filteredData);
         putUser({id: usuario, body: filteredData});
         setModalOpen();
     }

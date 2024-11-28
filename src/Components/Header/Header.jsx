@@ -47,7 +47,7 @@ export default function Header() {
           <StyledDivs1>
             <StyledLink to="/">HOME</StyledLink>
             <StyledLink to="/perfil">PERFIL</StyledLink>
-            <StyledLink to="/usuarios">USUARIOS</StyledLink>
+            {usuario.nivel === "administrador" ? <StyledLink to="/usuarios">USUARIOS</StyledLink> : null}
           </StyledDivs1>
           <StyledDivs2>
             <h2>Bem-vindo, {usuario.nome}</h2>
