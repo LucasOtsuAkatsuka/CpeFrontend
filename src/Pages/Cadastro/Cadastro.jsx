@@ -6,8 +6,11 @@ import ButtonForm from '../../Components/ButtonForm';
 import InputPassword from '../../Components/InputPassword';
 import { useForm } from "react-hook-form";
 import { useCreateUser } from '../../hooks/user';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cadastro() {
+
+  const navigate = useNavigate()
 
   //Hooks
   const {
@@ -23,6 +26,7 @@ export default function Cadastro() {
     console.log("Dados enviados ao backend:", data);
     console.log("cheguei na funcao")
     postUser(data);
+    navigate("/login", { replace: true });
   }
 
   return (

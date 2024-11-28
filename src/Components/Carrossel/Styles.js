@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 
 export const CarouselWrapper = styled.div`
-    width: 80%;
-    width: 1000px;
+    width: 70%;
     margin-top: 50px; 
 
     .carousel {
@@ -12,24 +11,45 @@ export const CarouselWrapper = styled.div`
     }
 
     .img-caroussel{
-      height: 600px;
+      height: 80%;
       object-fit: contain;
     }
     
-
-    @media (max-width: 768px) {
-        width: 90%;
-    }
-
-    @media (max-width: 480px) {
-        width: 80%;
+    @media (max-width: 1200px) {
+      width: 80%;
         .carousel {
-          height: 100px;
-          width: 300px;
+          height: 350px;
+          width: 100%;
         }
 
         .img-caroussel{
+          height: 70%;
+          object-fit: contain;
+        }
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+        .carousel {
           height: 200px;
+          width: 100%;
+        }
+
+        .img-caroussel{
+          height: 60%;
+          object-fit: contain;
+        }
+    }
+
+    @media (max-width: 480px) {
+        width: 95%;
+        .carousel {
+          height: 150px;
+          width: 100%;
+        }
+
+        .img-caroussel{
+          height: 60%;
           object-fit: contain;
         }
     }

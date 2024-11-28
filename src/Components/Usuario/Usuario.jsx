@@ -1,22 +1,26 @@
 import React from 'react'
-import { Container,  StyledDados, StyledDado, StyledValor} from "./styles"
+import { StyledDados, StyledDado, StyledValor} from "./styles"
 
 
-export default function Usuario({usuario}) {
-  return (
-        <StyledDados>
-            <StyledDado>
-                Nome: <StyledValor>{usuario.nome}</StyledValor>
-            </StyledDado>
-            <StyledDado>
-                Email: <StyledValor>{usuario.email}</StyledValor>
-            </StyledDado>
-            <StyledDado>
-                Cargo: <StyledValor>{usuario.cargo}</StyledValor>
-            </StyledDado>
-            <StyledDado>
-                Status: <StyledValor>{usuario.status}</StyledValor>
-            </StyledDado>
-        </StyledDados>
-  )
+export default function Usuario({user}) {
+    if (!user) {
+        return <div>Carregando...</div>; 
+      }
+
+    return (
+            <StyledDados>
+                <StyledDado>
+                    Nome: <StyledValor>{user.nome}</StyledValor>
+                </StyledDado>
+                <StyledDado>
+                    Email: <StyledValor>{user.email}</StyledValor>
+                </StyledDado>
+                <StyledDado>
+                    Cargo: <StyledValor>{user.cargo}</StyledValor>
+                </StyledDado>
+                <StyledDado>
+                    Status: <StyledValor>{user.status}</StyledValor>
+                </StyledDado>
+            </StyledDados>
+    )
 }

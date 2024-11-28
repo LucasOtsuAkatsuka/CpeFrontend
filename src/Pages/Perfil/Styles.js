@@ -45,3 +45,23 @@ export const StyledButton = styled.button`
   font-weight: bold;
   cursor: pointer;
 `
+
+export const StyledDados = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
+
+export const StyledNome = styled.h1`
+
+`
+
+export const StyledDado = styled.h2`
+    display: flex;
+    gap: 20px
+`
+
+export const StyledValor = styled.span`
+  color: white;
+`
+

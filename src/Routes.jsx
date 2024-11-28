@@ -15,6 +15,15 @@ function RotasPrivadas (){
     return <Navigate to="/login" replace />
 }
 
+function RotasAdm (){
+    const usuario = useAuthStore((state) => state.usuario);
+    if (usuario.nivel === "administrador"){
+        return <Outlet />;
+    } else {
+        return <Navigate to="/" replace />
+    }
+}
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
@@ -22,12 +31,13 @@ const router = createBrowserRouter(
                 <Route element={<RotasPrivadas/>}>
                     <Route path="perfil" element={<Perfil></Perfil>}></Route>
                     <Route index element={<Home></Home>}></Route>
-                    <Route path="usuarios" element={<Usuarios></Usuarios>}></Route>
+                    <Route element={<RotasAdm></RotasAdm>}>
+                        <Route path="usuarios" element={<Usuarios></Usuarios>}></Route>
+                    </Route>
                 </Route>
                 <Route path="login" element={<Login></Login>}></Route>
                 <Route path="cadastro" element={<Cadastro></Cadastro>}></Route>
             </Route>
-            
         </Route>
     )
 )

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Table } from 'antd';
+import { Select } from 'antd';
 
 export const StyledTabela = styled(Table)`
   .ant-table {
@@ -7,6 +8,10 @@ export const StyledTabela = styled(Table)`
     width: 1200px;
     max-width: 1200px;
     margin: 30px auto auto auto;
+
+    &:hover {
+        background-color: black !important;
+    }
   }
 
   .ant-table-thead > tr > th {
@@ -16,9 +21,6 @@ export const StyledTabela = styled(Table)`
     text-align: center;
     border-right: none;
 
-    &:hover {
-        color: black;
-    }
   }
 
   .ant-table-tbody > tr > td {
@@ -27,6 +29,7 @@ export const StyledTabela = styled(Table)`
     border: none;
     border-bottom: 1px solid #fff;
     word-wrap: break-word;
+
   }
 
   .ant-table-tbody td:first-child {
@@ -149,3 +152,34 @@ export const StyledBuscaContainer = styled.div`
     width: 40%;
     position: relative;
 `
+
+export const StyledSelect = styled(Select)`
+    .ant-select {
+        text-align: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .ant-select-selector {
+        margin: 0 !important; 
+        padding: 0 16px; 
+        border: 1px solid #fff; 
+        background-color: transparent; 
+        display: flex;
+        justify-content: center;
+    }
+    
+    .ant-select-selection-item {
+        overflow: visible;
+        text-overflow: unset;
+        white-space: normal; 
+    }
+
+    .ant-select-arrow {
+        display: none;
+    }
+`
+    
+

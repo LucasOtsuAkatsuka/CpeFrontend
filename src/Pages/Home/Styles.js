@@ -21,10 +21,14 @@ export const Container = styled.div`
   }
 `;
 
+export const StyledDiv = styled.div`
+  width: 100%;
+  margin-top: 2%;
+`
+
 export const ButtonModalLogin = styled.button`
-  position: absolute;
-  top: 59%;
-  right: 19%;
+  margin-left: 75%;
+  margin-bottom: 0;
   padding: 5px 10px;
   background-color: #000;
   border: 1px solid #FFD700;
@@ -35,27 +39,51 @@ export const ButtonModalLogin = styled.button`
 
     
   @media (max-width: 1920px) {
-    top: 59%;
-    right: 19%;
+    margin-left: 75%;
+    margin-bottom: 0;
   }
 
+  @media (max-width: 1800px) {
+    margin-left: 77%;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1700px) {
+    margin-left: 77%;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1600px) {
+    margin-left: 77%;
+    margin-bottom: 0;
+  }
+
+
+  @media (max-width: 1550px) {
+    margin-left: 80%;
+    margin-bottom: 0;
+  }
   
   @media (max-width: 1366px) {
-    top: 60%;
-    right: 15%;
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 
   
   @media (max-width: 1280px) {
-    top: 62%;
-    right: 14%;
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 
   
   @media (max-width: 1024px) {
-    top: 63%;
-    right: 10%;
-    padding: 6px 8px;
+    margin-left: 80%;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    margin-left: 80%;
+    margin-bottom: 0;
   }
 
   

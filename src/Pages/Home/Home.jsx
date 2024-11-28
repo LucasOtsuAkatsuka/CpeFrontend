@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Carrossel from '../../Components/Carrossel'
-import { ButtonModalLogin, Container, Pagina } from './Styles'
+import { StyledDiv, ButtonModalLogin, Container, Pagina } from './Styles'
 import api from '../../Services/api';
 import Tabela from '../../Components/Tabela';
 import ModalCpe from '../../Components/Modal/ModalCpe';
@@ -64,12 +64,14 @@ export default function Home() {
     <Pagina>
       <Container>
         <Carrossel/>
-        {hasActiveSession ? (
-          <ButtonModalLogin onClick={() => destroySessao()}>Deslogar</ButtonModalLogin>
-        ) : (
-          <ButtonModalLogin onClick={() => setOpenModal(true)}>Fazer Login</ButtonModalLogin>
-        )}
-        <Tabela/>
+        <StyledDiv>
+          {hasActiveSession ? (
+            <ButtonModalLogin onClick={() => destroySessao()}>Deslogar</ButtonModalLogin>
+          ) : (
+            <ButtonModalLogin onClick={() => setOpenModal(true)}>Fazer Login</ButtonModalLogin>
+          )}
+          <Tabela/>
+        </StyledDiv>
         <ModalCpe isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
       </Container>
     </Pagina>

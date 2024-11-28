@@ -6,7 +6,7 @@ export const StyledTabela = styled(Table)`
     background-color: #212121;
     width: 1200px;
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 1% auto;
   }
 
   .ant-table-thead > tr > th {
