@@ -23,12 +23,9 @@ const TabelaUsuarios = () => {
     const [openModal, setOpenModal] = useState(false);
     const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
     const [busca, setBusca] = useState('');
-    const [cargoEditando, setCargoEditando] = useState(null); // Novo estado para edição de cargos
-    const [novoCargo, setNovoCargo] = useState('');
-    const [openModalEdit, setOpenModalEdit] = useState(false); // Estado para armazenar o valor do cargo editado
-
+    const [openModalEdit, setOpenModalEdit] = useState(false); 
     const { mutate: putUser } = useUpdateUser({});
-    const usuario = useAuthStore((state) => state.usuario._id);
+
 
     const handleStatusChange = (id, novoStatus) => {
         const statusUpdate = { nivel: novoStatus };
@@ -49,24 +46,6 @@ const TabelaUsuarios = () => {
             alert(erro.message);
         } finally {
             setCarregando(false);
-        }
-    };
-
-    const handleEditCargo = (id, cargo) => {
-        setCargoEditando(id);
-        setNovoCargo(cargo);
-    };
-
-    const salvarCargo = async (id) => {
-        try {
-            await putUser({ id, body: { cargo: novoCargo } });
-            const novosUsuarios = usuarios.map((usuario) =>
-                usuario._id === id ? { ...usuario, cargo: novoCargo } : usuario
-            );
-            setUsuarios(novosUsuarios);
-            setCargoEditando(null);
-        } catch (error) {
-            console.error('Erro ao salvar cargo:', error);
         }
     };
 

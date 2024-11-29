@@ -50,7 +50,7 @@ export default function Login() {
               <LoginLink>
                 Não tem login? Faça seu cadastro <Link to="/cadastro">aqui</Link>.
               </LoginLink>
-              <ButtonForm type="submit" text="CRIAR CONTA"></ButtonForm>
+              <ButtonForm type="submit" text="FAZER LOGIN"></ButtonForm>
           </StyledForm>
         </Container>
       </Pagina>

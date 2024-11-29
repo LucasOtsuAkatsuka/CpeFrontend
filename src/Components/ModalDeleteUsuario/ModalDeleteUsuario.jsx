@@ -1,6 +1,8 @@
 import React from 'react'
 import { ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, LoginButton} from './styles';
 import { useDeleteUser } from '../../hooks/user';
+import useAuthStore from '../../stores/auth';
+
 
 
 export default function ModalDeleteUsuario({isOpen, setModalOpen, idUsuario}) {
@@ -9,9 +11,10 @@ export default function ModalDeleteUsuario({isOpen, setModalOpen, idUsuario}) {
 
   function destroyUsuario() {
     deleteUsuario(idUsuario);
-    setModalOpen(false);
     window.location.reload();
+    setModalOpen(false);
 }
+
   
 
   if(isOpen)
@@ -27,7 +30,7 @@ export default function ModalDeleteUsuario({isOpen, setModalOpen, idUsuario}) {
             <p>Tem certeza que você deseja excluir esse usuário?</p>
             </ModalBody>
             <ModalFooter>
-            <LoginButton onClick={destroyUsuario} disabled={isPending}>{isPending ? 'Aguarde...' : 'Excluir'}</LoginButton>
+            <LoginButton onClick={() => {destroyUsuario()}} disabled={isPending}>{isPending ? 'Aguarde...' : 'Excluir'}</LoginButton>
             </ModalFooter>
           </ModalContent>
         </ModalOverlay>

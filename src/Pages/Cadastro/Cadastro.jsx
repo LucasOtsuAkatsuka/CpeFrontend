@@ -81,7 +81,7 @@ export default function Cadastro() {
           
           <ImputForm 
             {...register("confirmarSenha", { 
-              required: "O campo Repita sua senha é obrigatório", 
+              required: "O campo é obrigatório", 
               validate: value => 
                 value === senha || "As senhas não correspondem" 
             })} 

@@ -14,7 +14,10 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
         register,
         reset,
         formState: {errors},
+        watch,
     } = useForm({});
+
+    const senha = watch('senha');
 
     const{ mutate:putUser, isPending } = useUpdateUser({ onSuccess: (updatedUser) => {
         useAuthStore.setState((state) => ({
@@ -51,8 +54,15 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
                     <ImputForm {...register("email")} type="email" placeholder="E-mail" />
                     <ImputForm  {...register("cargo")} type="text" placeholder="Cargo" />
                     <ImputForm  {...register("status")} type="text" placeholder="Status" />
-                    <InputPassword  {...register("senha")} type="password" placeholder="Senha"/>
-                    <ImputForm type="password" placeholder="Confirme sua senha"/>
+                    <InputPassword  {...register("senha")} placeholder="Senha"/>
+                    <ImputForm  type="password" 
+                                placeholder="Confirme sua senha"
+                                {...register("confirmeSenha", {
+                                    validate: (value) =>
+                                        value === senha || "As senhas não correspondem"
+                                })}
+                            />
+                            {errors.confirmeSenha && <p style={{color:'red'}}>{errors.confirmeSenha.message}</p>}
                 </ModalBody>
                 <ModalFooter>
                     <LoginButton type="submit">SALVAR</LoginButton>
