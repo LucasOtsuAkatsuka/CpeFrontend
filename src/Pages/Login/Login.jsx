@@ -46,7 +46,7 @@ export default function Login() {
           <StyledForm onSubmit={handleSubmit}>
               <h2>LOGIN</h2>
               <ImputForm type="email" placeholder="E-mail" required onChange={(e)=>setEmail(e.target.value)}/>
-              <InputPassword type="password" placeholder="Senha" required onChange={(e)=>setSenha(e.target.value)}></InputPassword>
+              <InputPassword placeholder="Senha" required onChange={(e)=>setSenha(e.target.value)}></InputPassword>
               <LoginLink>
                 Não tem login? Faça seu cadastro <Link to="/cadastro">aqui</Link>.
               </LoginLink>

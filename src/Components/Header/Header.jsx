@@ -17,6 +17,7 @@ export default function Header() {
     setMenuVisivel(!menuVisivel);
   }
 
+
   return (
     <>
       <StyledHeader>
@@ -44,7 +45,8 @@ export default function Header() {
             </StyledMenuNav>
           )}
           
-          <StyledDivs1>
+
+          <StyledDivs1 isAdmin={usuario.nivel !== "administrador"}>
             <StyledLink to="/">HOME</StyledLink>
             <StyledLink to="/perfil">PERFIL</StyledLink>
             {usuario.nivel === "administrador" ? <StyledLink to="/usuarios">USUARIOS</StyledLink> : null}

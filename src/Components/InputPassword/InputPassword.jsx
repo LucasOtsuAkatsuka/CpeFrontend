@@ -6,8 +6,12 @@ const InputPassword = React.forwardRef(({ placeholder, required, onChange, ...pr
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
+        setShowPassword((prevShowPassword) => {
+            console.log("Novo valor de showPassword:", !prevShowPassword);
+            return !prevShowPassword;
+        })
     };
+    console.log(props);
 
     return (
         <InputContainer>

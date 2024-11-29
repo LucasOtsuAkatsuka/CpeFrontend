@@ -37,7 +37,8 @@ export const StyledHeader = styled.header`
 
 export const StyledDivs1 = styled.div`
   display:flex;
-  justify-content: space-between;
+  justify-content: ${(props) => (props.isAdmin ? "center" : "space-between")};
+  gap: ${(props) => (props.isAdmin ? "30%" : "0px")};
   width: 30%;
   font-weight: bold;
   @media (max-width: 1400px) {

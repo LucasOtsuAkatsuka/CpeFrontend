@@ -7,29 +7,22 @@ export async function GetUsers(){
 }
 
 export async function CreateUsers(body){
-    console.log("Body enviado:", body);
     const {data} = await api.post(`/usuarios`, body);
     return data;
 }
 
 export async function UpdateUsers({id, body}){
-    console.log("Body enviado:", body);
-    console.log("id enviado: ", id);
     const {data} = await api.put(`/usuarios/${id}`, body)
     return data;
 }
 
 export async function DeleteUsers(id){
-    console.log(id);
     const {data} = await api.delete(`/usuarios/${id}`)
-    console.log(data);
     return data;
 }
 
 //Sessoes
 export async function CreateSessao(body){
-    console.log("cheguei na endpoint sessao")
-    console.log("Body enviado:", body);
     const {data} = await api.post(`/sessoes`, body);
     return data;
 }

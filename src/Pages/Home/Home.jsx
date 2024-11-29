@@ -77,4 +77,3 @@ export default function Home() {
     </Pagina>
   )
 }
-//{usuarios.map((usuario)=> <h1 className='nomesMap'>{usuario.nome}</h1>)}

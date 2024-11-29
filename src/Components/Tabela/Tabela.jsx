@@ -57,10 +57,10 @@ const Tabela = () => {
       setSessoes((prevSessoes) =>
         prevSessoes.map((sessao) => ({
           ...sessao,
-          duration: calcularDuracao(sessao.createdAt), // Recalcular a duração
+          duration: calcularDuracao(sessao.createdAt),
         }))
       );
-    }, 1000); // Atualiza a cada segundo
+    }, 1000); 
 
     return () => clearInterval(intervalId);
     
