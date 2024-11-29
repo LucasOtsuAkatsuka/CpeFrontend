@@ -58,8 +58,10 @@ export default function ModalCpeEdit({isOpen, setModalOpen}) {
                     <ImputForm  type="password" 
                                 placeholder="Confirme sua senha"
                                 {...register("confirmeSenha", {
-                                    validate: (value) =>
-                                        value === senha || "As senhas não correspondem"
+                                    validate: (value) => {
+                                        if (!senha || senha.trim() === "") return true;
+                                        return value === senha || "As senhas não correspondem"
+                                    }
                                 })}
                             />
                             {errors.confirmeSenha && <p style={{color:'red'}}>{errors.confirmeSenha.message}</p>}

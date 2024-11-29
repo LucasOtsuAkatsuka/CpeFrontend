@@ -1,13 +1,14 @@
 import React from 'react'
 import { ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, LoginButton} from './styles';
 import { useDeleteUser } from '../../hooks/user';
-import useAuthStore from '../../stores/auth';
+
+
 
 
 
 export default function ModalDeleteUsuario({isOpen, setModalOpen, idUsuario}) {
-  
   const{ mutate:deleteUsuario, isPending} = useDeleteUser({});
+
 
   function destroyUsuario() {
     deleteUsuario(idUsuario);
